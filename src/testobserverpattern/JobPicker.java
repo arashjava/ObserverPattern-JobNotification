@@ -20,8 +20,7 @@ public class JobPicker implements SubjectInt{
         // creates a list to hold all the observers
         observers = new ArrayList<ObserverInt>();
     }
-    
-    
+       
     
     @Override
     public void register(ObserverInt newObserver) {

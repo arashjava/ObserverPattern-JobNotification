@@ -13,7 +13,9 @@ public class JobObserver implements ObserverInt{
       private String newJob;
       private String category;
       private int observerId;
-
+    // refrence to Subject
+    private SubjectInt jobGrabber;
+      
     public String getNewJob() {
         return newJob;
     }
@@ -38,44 +40,20 @@ public class JobObserver implements ObserverInt{
         this.observerId = observerId;
     }
 
-    
-
-    
-    // refrence to Subject
-    private SubjectInt jobGrabber;
-
     // constructor with subject parameter
     public JobObserver(SubjectInt jobPicker) {
         this.jobGrabber = jobPicker;
-        
-        // assign an id to observer and increase the counter
-  //      this.observerId = ++observerIdCounter;
-        
- //       System.out.println("New observer created: "+ this.observerId);
         
         // register the applicant
         jobPicker.register(this);
     }
     
-    
-    
-
     @Override
     public void update(){
-        // shows new updated jobs
-  //              this.observerId = ++observerIdCounter;
-   //             System.out.println("New observer created: "+ this.observerId);
-  //      System.out.println(observerId + "\n new Job: for observer id: "+ observerId);
- //       System.out.println(observerId + "\n new Job: for observer id: "+ observerId);
         showUpdates();
     }
 
     public void showUpdates( ){
-        // shows new updated jobs
-  //              this.observerId = ++observerIdCounter;
-   //             System.out.println("New observer created: "+ this.observerId);
-  //      System.out.println(observerId + "\n new Job: for observer id: "+ observerId);
- //       System.out.println(observerId + "\n new Job: for observer id: "+ observerId);
        if(getNewJob().toLowerCase().contains(getCategory().toLowerCase())){ ((JobPicker)jobGrabber).setNewJob(category);}
             System.out.println( "Observer ID: " + getObserverId()+ " For category: " + getCategory() + ", " + getNewJob() + " is available. \n");
         }

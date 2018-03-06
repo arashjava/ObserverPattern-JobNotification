@@ -29,7 +29,6 @@ public class RunJobs {
                  Runnable getJob= new GetJobs(i, jobGrabber, observers.get(i), jobAvailable);
                  new Thread(getJob).start();
             }
-
         }
     }
     
